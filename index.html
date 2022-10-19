@@ -159,7 +159,7 @@ window.addEventListener("load", mediaSizer);
 
         function mediaSizer() {
         // Determines the correct viz layout according to screen sizes.
-            if (window.matchMedia("(max-width: 480px)").matches) {
+            if (window.matchMedia("(max-width: 415px)").matches) {
                 //alert("I am a phone layout!");
                 devType = 'phone';
                 vWidth = 415;
@@ -168,7 +168,7 @@ window.addEventListener("load", mediaSizer);
             } else if (window.matchMedia("(max-width: 980px)").matches) {
                 //alert("I am a tablet layout!");
                 devType = 'tablet';
-                vWidth = 1600;
+                vWidth = 1000;
                 //options.device = 'tablet';
             } else {
                 //alert("I am a desktop layout!");
@@ -180,11 +180,27 @@ window.addEventListener("load", mediaSizer);
             console.log("devtype: "+devType )
             console.log("launch0")
             launchViz(0);
-            console.log("launch1")        
+            console.log("launch1")   
+			if (devType === 'desktop')  {
+			vHeight = 900;}
+			else if (devType === 'phone')
+			{vHeight = 1500;}
+			else {vHeight = 1600;}     
             launchViz(1);
-			vHeight = 1500;
+
+			if (devType === 'desktop')  {
+			vHeight = 900;}
+			else if (devType === 'phone')
+			{vHeight = 2000;}
+			else {vHeight = 1600;}
+
             launchViz(2);
-			vHeight = 900;
+			if (devType === 'desktop')  {
+			vHeight = 900;}
+			else if (devType === 'phone')
+			{vHeight = 2000;}
+			else {vHeight = 1600;}
+			
             launchViz(3);
 
  
